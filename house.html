@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+        .sect{
+            border-radius: 14px;
+            display:flex;
+            margin-top:70px;
+            padding-bottom: 30px;
+            padding-top:10px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%;
+            
+            box-shadow: 00px 20px 20px rgba(0, 0, 0, 0.1); 
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        form{
+            display: flex;
+            flex-direction:column ;
+            margin-left: 30%;
+            
+            
+            gap: 20px;
+            width: 90%;
+            margin-top: 30px;
+            
+        }
+        
+        input{
+            width:70%;
+            height: 40px;
+            font-size: 18px;
+            }
+        label{
+            
+            font-size: 17px;
+            }
+         .button1{
+                width: 71%;
+                background-color: blue;
+                color: white;
+                border: none;
+                border-radius: 12px;
+                height: 40px;
+                font-size: 17px;
+            }   
+            .button1:hover{
+                transform: scale(1.05);
+            }
+            .sect:hover{
+                transform: scale(1.05);
+
+            }
+
+            
+
+            
+            #card{
+                display: flex;
+                display: none;
+                height: 40px;
+                margin-left: 220px;
+                margin-right: 220px;
+                text-align: center;
+                font-size: 18px;
+                color: white;
+                box-shadow: 00px 20px 20px rgba(0, 0, 0, 0.1); 
+                transition: transform 0.3s, box-shadow 0.3s;
+                border: none;
+                padding-top: 20px;
+                border-radius: 12px;
+                margin-top: 40px;
+                
+            }
+            @media(max-width:500px) {
+                form{
+                    margin-left: 30px;
+
+                }
+                input{
+                    width: 80%;
+                }
+                .button1{
+                    width:83%;
+                }
+                #card{
+                    display: flex;
+                    display: none;
+                    height: 30px;
+                    margin-left: 20px;
+                    width: 200px;
+                    padding-bottom:15px;
+                    margin-right: 20px;
+                    text-align: center;
+                    font-size: 18px;
+                    color: white;
+                    box-shadow: 00px 20px 20px rgba(0, 0, 0, 0.1); 
+                    transition: transform 0.3s, box-shadow 0.3s;
+                    border: none;
+
+
+                }
+                
+            }
+            
+
+            
+
+    
+    </style>
+</head>
+<body>
+    <h1><center>IIT Sports House Finder</center></h1>
+    <div class="sect">
+        <form>
+            
+                <label for="input1" >Student ID(IIT)</label>
+                <input id="input1" name="number" placeholder="Enter 8-digit ID">
+                <button class="button1" id="button">Submit</button>
+
+
+
+        </form>
+
+
+    </div>
+    <div id="card">
+        <div id="result"></div>
+    </div>    
+    <script>
+        document.getElementById("button").onclick=function(e){
+            e.preventDefault();
+            let  id=document.getElementById("input1").value;
+            let id_1=Number(id);
+            if(id===""){
+                alert("Pls enter a student ID!");  
+            }
+            else if(isNaN(id_1)){
+                alert("Pls enter a numeric ID!");
+            }
+            else if(id.length!=8){
+                alert("Pls enter a ID with 8 digits!");
+
+            }
+            else{
+              
+
+                let t_d1=id_1%100;
+                document.getElementById("card").style.display="block";
+                if(t_d1%4===0){
+                    document.getElementById("result").innerText="Your House is:"+" "+"Gamini!"
+                    card.style.backgroundColor="blue"
+                }
+                else if(t_d1%4===1){
+                    document.getElementById("result").innerText="Your House is:"+" "+"John!"
+                    card.style.backgroundColor="#008080"
+                }
+                else if(t_d1%4===2){
+                    document.getElementById("result").innerText="Your House is:"+" "+"Peter!"
+                     card.style.backgroundColor="red";
+                }
+                else if(t_d1%4===3){
+                    document.getElementById("result").innerText="Your House is:"+" "+"Steve!"
+                    card.style.backgroundColor="#FFD700";
+                }
+            }
+
+
+
+        }
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+    <script>
+
+
+    </script>
+
+</body>
+</html>
