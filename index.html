@@ -128,7 +128,8 @@
       }
     }
 
-    /* Tablet (601px–1000px) */
+    /*mobile responsivity */
+    
     @media (max-width: 1000px) and (min-width: 601px) {
       .sect {
         width: 80%;
@@ -166,7 +167,7 @@
   </div>
 
   <script>
-    document.getElementById("button").onclick = function(e) {
+    document.getElementById("button").onclick = function(e) {   //when the button is clicked the function is executed
       e.preventDefault();
       let id = document.getElementById("input1").value.trim();
       let id_1 = Number(id);
@@ -174,7 +175,7 @@
       if (id === "") {
         alert("Pls enter a student ID!");
       } else if (isNaN(id_1)) {
-        alert("Pls enter a numeric ID!");
+        alert("Pls enter a numeric ID!");  //ID Validation
       } else if (id.length != 8) {
         alert("Pls enter an ID with 8 digits!");
       } else {
@@ -187,12 +188,12 @@
         void card.offsetWidth; // re-trigger animation
         card.classList.add("show");
 
-        if (t_d1 % 4 === 0) {
+        if (t_d1 % 4 === 0) {         
           result.innerText = "Your House is: Gamini!";
           card.style.backgroundColor = "blue";
-        } else if (t_d1 % 4 === 1) {
+        } else if (t_d1 % 4 === 1) {  // modulor division used to determine the house
           result.innerText = "Your House is: John!";
-          card.style.backgroundColor = "#008080";
+          card.style.backgroundColor = "#008080";         
         } else if (t_d1 % 4 === 2) {
           result.innerText = "Your House is: Peter!";
           card.style.backgroundColor = "red";
